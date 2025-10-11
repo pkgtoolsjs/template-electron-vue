@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const versions = reactive({ ...window.electron.process.versions })
+const versions = reactive({ ...window.api.getElectronProcessVersions() })
 </script>
 
 <template>

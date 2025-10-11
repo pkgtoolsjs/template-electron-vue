@@ -1,5 +1,8 @@
 <script setup lang="ts">
-const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
+const ping = async () => {
+  const res = await window.api.ping()
+  console.log('From ipcMain:', res)
+}
 </script>
 
 <template>
@@ -16,7 +19,7 @@ const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
       <a href="https://electron-vite.org/" target="_blank" rel="noreferrer">Documentation</a>
     </div>
     <div class="action">
-      <a target="_blank" rel="noreferrer" @click="ipcHandle">Send IPC</a>
+      <a target="_blank" rel="noreferrer" @click="ping">Send IPC</a>
     </div>
   </div>
 </template>

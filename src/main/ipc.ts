@@ -2,8 +2,9 @@ import { ipcMain } from 'electron'
 
 function initIpcMain() {
   // IPC test
-  ipcMain.on('ping', () => {
+  ipcMain.handle('ping', () => {
     console.log('pong')
+    return 'pong'
   })
 }
 

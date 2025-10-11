@@ -1,8 +1,12 @@
-import { ElectronAPI } from '@electron-toolkit/preload'
+import type { ElectronAPI } from '@electron-toolkit/preload'
+
+export interface IElectronAPI {
+  ping: () => Promise<string>
+  getElectronProcessVersions: () => ElectronAPI['process']['versions']
+}
 
 declare global {
   interface Window {
-    electron: ElectronAPI
-    api: unknown
+    api: IElectronAPI
   }
 }
