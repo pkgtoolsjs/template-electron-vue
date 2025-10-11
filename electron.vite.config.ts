@@ -6,6 +6,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import vueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+import vueDevTools from 'vite-plugin-vue-devtools'
 
 export const processPath = {
   main: resolve('src/main'),
@@ -35,6 +36,7 @@ export default defineConfig({
         ],
         dts: resolve(processPath.renderer, 'src/types/typed-router.d.ts')
       }),
+      vueDevTools(),
       vue(),
       AutoImport({
         dts: 'src/types/auto-imports.d.ts',
