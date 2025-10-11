@@ -1,4 +1,4 @@
-import { resolve } from 'path'
+import { resolve } from 'node:path'
 import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
 
 import vue from '@vitejs/plugin-vue'
@@ -6,6 +6,12 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import vueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+
+export const processPath = {
+  main: resolve('src/main'),
+  preload: resolve('src/preload'),
+  renderer: resolve('src/renderer')
+}
 
 export default defineConfig({
   main: {
@@ -17,17 +23,17 @@ export default defineConfig({
   renderer: {
     resolve: {
       alias: {
-        '@renderer': resolve('src/renderer/src')
+        '@renderer': resolve(processPath.renderer, 'src')
       }
     },
     plugins: [
       vueRouter({
         routesFolder: [
           {
-            src: 'src/renderer/src/pages'
+            src: resolve(processPath.renderer, 'src/pages')
           }
         ],
-        dts: 'src/renderer/src/types/typed-router.d.ts'
+        dts: resolve(processPath.renderer, 'src/types/typed-router.d.ts')
       }),
       vue(),
       AutoImport({
