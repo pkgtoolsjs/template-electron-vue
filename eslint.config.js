@@ -22,6 +22,13 @@ export default defineConfig(
     }
   },
   {
+    name: 'renderer/unplugin-vue-router',
+    files: ['src/renderer/src/pages/**/*.vue'],
+    rules: {
+      'vue/multi-word-component-names': 'off'
+    }
+  },
+  {
     files: ['**/*.{ts,mts,tsx,vue}'],
     rules: {
       '@typescript-eslint/no-unused-vars': 'off',
