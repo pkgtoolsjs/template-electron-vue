@@ -1,8 +1,10 @@
 import { ipcMain } from 'electron'
 
-export default function initIpcMain() {
+function initIpcMain() {
   // IPC test
   ipcMain.on('ping', () => {
     console.log('pong')
   })
 }
+
+export { initIpcMain }

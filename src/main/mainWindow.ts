@@ -7,7 +7,7 @@ import icon from '../../resources/icon.png?asset'
 /**
  * Create the main browser window.
  */
-export default function createMainWindow() {
+function createMainWindow() {
   const mainWindow = new BrowserWindow({
     width: 900,
     height: 670,
@@ -40,3 +40,5 @@ export default function createMainWindow() {
 
   return mainWindow
 }
+
+export { createMainWindow }
