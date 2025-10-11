@@ -61,7 +61,7 @@ code {
   color: var(--ev-c-text-1);
   font-weight: 700;
   line-height: 32px;
-  text-align: center;
+  /* text-align: center; */
   margin: 0;
   padding: 16px 0;
 }
