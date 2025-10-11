@@ -22,6 +22,13 @@ export default defineConfig(
     }
   },
   {
+    name: 'renderer/glabol',
+    files: ['src/renderer/src/**/*.{ts,mts,tsx,vue}'],
+    rules: {
+      'no-undef': 'off'
+    }
+  },
+  {
     name: 'renderer/unplugin-vue-router',
     files: ['src/renderer/src/pages/**/*.vue'],
     rules: {
