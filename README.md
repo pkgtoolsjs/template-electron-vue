@@ -1,4 +1,4 @@
-# bigpear
+# template-electron-vue
 
 An Electron application with Vue and TypeScript
 

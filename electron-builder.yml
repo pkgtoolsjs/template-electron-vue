@@ -1,5 +1,5 @@
-appId: com.electron.bigpear
-productName: bigpear
+appId: com.electron.exampleapp
+productName: exampleapp
 directories:
   buildResources: build
 files:
@@ -12,7 +12,7 @@ files:
 asarUnpack:
   - resources/**
 win:
-  executableName: bigpear
+  executableName: exampleapp
   requestedExecutionLevel: requireAdministrator
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
